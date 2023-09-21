@@ -1,0 +1,21 @@
+// Conteo
+// use("sample_training")
+// db.trips.find({
+//   tripduration: {
+//     $lte: 100
+//   },
+//   usertype: {
+//     $eq: "Subscriber"
+//   }
+// }).count()
+
+// Documentos
+use("sample_training")
+db.trips.find({
+  tripduration: {
+    $lte: 100
+  },
+  usertype: {
+    $eq: "Subscriber"
+  }
+})
