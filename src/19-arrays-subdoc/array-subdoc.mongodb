@@ -20,5 +20,5 @@ db.companies.find({
 }, {
     _id: 0,
     name: 1,
-    relationships: 1
+    "relationships.person.first_name": 1
 })
