@@ -1,0 +1,37 @@
+use ("platzi_store")
+// operador $in (ya visto en update-arrays), para obetener elementos dentro de un array, objetos o valores especificos
+// db.inventory.find({ qty: { $in: [20,25]} })
+
+// db.inventory.find({
+//     tags: { $in: ["book", "electronics"]} 
+//     //$in funcionaria como "or"
+// })
+
+// $nin para establecer que no traiga elementos que coincidan con la query usando este operador
+// db.inventory.find({ qty: { $nin: [20,25]} })
+
+// db.inventory.find({
+//     tags: { $nin: ["book", "electronics"]} 
+//     //$in funcionaria como "or"
+// })
+
+// operadores que solo funcionan para arrays
+// db.inventory.find({ tags: "book"})
+
+//esta query debe cumplir el orden del documentos para que nos traiga exactamente lo que pedimos en la query
+// db.inventory.find({ tags: ["school", "book"]})
+
+// operador $all
+// db.inventory.find({ tags: {$all: ["book", "school"]}})
+
+// operador $size, para buscar sobre el tamano de los arrays que tengan esa cantidad de elementos
+// db.inventory.find({ tags: {$size: 2}})
+
+// operador $elemMatch sirve para cuando tenemos un array con objetos dentro y queremos ser exactos en la query
+// db.survey.find({ results: {$elemMatch: {product: "xyz", score: {$lte: 7}}}})
+// db.survey.find({ 
+//     results: {$elemMatch: {
+//         product: "xyz", 
+//         score: { $gte:7}
+//     }}
+// })

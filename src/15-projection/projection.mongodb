@@ -1,0 +1,10 @@
+use ("sample_training")
+//Projection de forma implicita
+db.trips.find ({
+    //Query
+     tripduration: { $gte: 500 }}, //gte + todo los valores >= 500 segundos
+    //projection
+    { tripduration: 1, usertype: 1}
+    ) //Poner el 1 cuando quiero que solo muestre esos campos en especifico
+    // el _id es el unico que se muestra siempre, sino lo queremos debemos ocultarlo explicitamente
+    // el 0 se usa para desactivar campos exolicitamente
