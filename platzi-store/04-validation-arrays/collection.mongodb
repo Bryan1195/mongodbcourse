@@ -1,0 +1,41 @@
+use ("platzi_store")
+
+db.createCollection('products', {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            // For declare required columns
+            required: ['name'],
+
+            // To specify the datatype
+            properties: {
+                name: {
+                    bsonType: 'string'
+                },
+                sizes: {
+                    // To create an array
+                    bsonType: 'array',
+                    // Should content at least one value
+                    minItems: 1,
+                    // Don't allow repeat elements
+                    uniqueItems: true,
+                    items: {
+                        bsonType: 'string'
+                    }
+                },
+                category: {
+                    required: ['name'],
+                    bsonType: 'object',
+                    properties: {
+                        name: {
+                            bsonType: 'string'
+                        },
+                        image: {
+                            bsonType: 'string'
+                        }
+                    }
+                }
+            }
+        }
+    }
+})

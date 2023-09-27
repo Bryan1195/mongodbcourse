@@ -1,0 +1,10 @@
+use("platzi_store")
+
+db.products.insertOne({
+    name: 'Nike',
+    sizes: ['XL'],
+    category: {
+        name: 'category',
+        image: 'url'
+    }
+})

@@ -1,0 +1,41 @@
+use ("platzi_store")
+
+db.createCollection('users', {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            // For declare required columns
+            required: ['email','password'],
+
+            // To specify the datatype
+            properties: {
+                name: {
+                    bsonType: 'string'
+                },
+                last_name: {
+                    bsonType: 'string'
+                },
+                email: {
+                    bsonType: 'string'
+                },
+                password: {
+                    bsonType: 'string'
+                },
+                // To limit a range of inputs
+                age: {
+                    bsonType: 'number',
+                    minimum: 18,
+                    maximum: 99
+                },
+                // Declare a bool datatype
+                isSingle: {
+                    bsonType: 'bool'
+                },
+                // Create list of options
+                role: {
+                    enum: ["customer", "seller", "admin"],
+                },
+            }
+        }
+    }
+})
