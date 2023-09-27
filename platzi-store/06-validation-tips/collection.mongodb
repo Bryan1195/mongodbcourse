@@ -6,7 +6,8 @@ db.createCollection('users', {
             bsonType: 'object',
             // For declare required columns
             required: ['email','password'],
-
+            // Not allow additional properties or columns
+            additionalProperties: true,
             // To specify the datatype
             properties: {
                 name: {
