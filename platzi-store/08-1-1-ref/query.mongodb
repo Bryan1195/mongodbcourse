@@ -1,0 +1,16 @@
+use("platzi_store")
+
+db.stores.find()
+db.stores_details.find()
+
+// Consulta
+db.stores.aggregate([ // desde stores, usamos el aggregate
+    {
+        $lookup: { // parte desde stores
+          from: 'stores_details', // agregamos cual coleccion queremos conectar
+          localField: 'storeId', // que campo los enlaza, en stores
+          foreignField: 'storeId', // que campo los enlaza, en stores_details
+          as: 'detail' // donde dejara la relacion
+        }
+    }
+])

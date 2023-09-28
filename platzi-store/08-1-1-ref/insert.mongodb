@@ -1,0 +1,20 @@
+use("platzi_store")
+
+db.stores.insertOne({
+    storeId: "ST001", // permitira la relacion
+    name: "PamplonaStore",
+    address:  "Calle falsa 123",
+    city: "Sprinfield",
+    state: "Londres",
+    zip: "1234"
+})
+
+db.stores_details.insertOne({
+    storeId: "ST001", // repetimos el storeID, ya que es 1-1
+    description: "PamplonaStore asdasdasd",
+    services: ["Ropa", "Deportivo"],
+    manager: {
+        name: "Mario",
+        cellphone: "123412412"
+    }
+})

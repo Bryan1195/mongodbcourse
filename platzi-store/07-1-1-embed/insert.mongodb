@@ -1,0 +1,20 @@
+use("platzi_store")
+
+db.users.insertOne({
+    last_name: 'Carvajal',
+    email: 'Luis@gmail.com',
+    password: 'yesrua',
+    role: 'admin',
+    age: 22,
+    social_accounts: ['twitter'],
+    address: {
+        street: 'calle 12',
+        city: 'Roma',
+        zip: '507'
+    },
+    shipping_address: {
+        street: 'calle 10',
+        city: 'Croacia',
+        zip: '507 423'
+    }
+})

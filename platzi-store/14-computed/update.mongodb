@@ -1,0 +1,38 @@
+use("platzi_store")
+
+// prod 1
+db.products.updateOne(
+    {_id: ObjectId('6514d5346ef3e332d78d5ba7')},
+    {
+        $set: {
+            stores_ids: [
+                ObjectId("649923f457514437ac501dd4")
+            ]
+        }
+    }
+)
+
+// prod 2
+db.products.updateOne(
+    {_id: ObjectId('6514d5346ef3e332d78d5ba8')},
+    {
+        $set: {
+            stores_ids: [
+                ObjectId("649923f457514437ac501dd4"),
+                ObjectId("649923f457514437ac501dd5"),
+            ]
+        }
+    }
+)
+
+//prod 3
+db.products.updateOne(
+    {_id: ObjectId('6514d5346ef3e332d78d5ba9')},
+    {
+        $set: {
+            stores_ids: [
+                ObjectId("649923f457514437ac501dd5")
+            ]
+        }
+    }
+)

@@ -1,0 +1,12 @@
+use("platzi_store")
+
+// buscar el id de un usuario
+db.users.find()
+
+// ver las ordenes de compra
+db.orders.find()
+
+// Buscar algo en concreto de las ordenes
+db.orders.find({
+  "items.qty": 2
+})

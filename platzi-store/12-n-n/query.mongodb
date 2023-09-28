@@ -1,0 +1,23 @@
+use("platzi_store")
+
+db.products.find()
+db.stores.find()
+
+db.products.aggregate([
+    {
+      $lookup: { // buscar las id que necesitamos
+        from: 'stores',
+        localField: '_id',
+        foreignField: 'products_ids',
+        as: 'stores'
+      }
+    },
+    {
+      $project: { // filtrar para ver mejor las id
+        _id: 1, // id producto
+        stores: { // en tiendas
+          _id: 1 // id tienda
+        }
+      }
+    }
+  ])
